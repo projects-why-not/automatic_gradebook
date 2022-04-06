@@ -12,8 +12,7 @@ def get_data(name_table):
 
 def add_data(name_table, data):
     global cur
-    print(name_table, data)
-    cur.execute(f"""INSERT {name_table} VALUES {data}""")
+    cur.execute(f"""INSERT {name_table} VALUES {data})""")
 
 
 def view_tasks():
