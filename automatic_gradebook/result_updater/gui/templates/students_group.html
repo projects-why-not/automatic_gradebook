@@ -1,0 +1,37 @@
+<style>
+
+div.overlay {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background: red;
+    border-radius: 30px;
+}
+
+#close_overlay_bt {
+    width: 60px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    background: blue;
+    position: absolute;}
+</style>
+
+<script>
+    function closeOverlay() {
+    let overlays = document.getElementsByClassName("overlay");
+    if (overlays.length > 0)
+        overlays[0].parentNode.removeChild(overlays[0]);
+}
+</script>
+
+<div class="overlay">
+    <div id="close_overlay_bt" onclick="closeOverlay();"></div>
+    <div style="width:80%; height: 90%; overflow: auto;">
+        <table>
+
+        </table>
+    </div>
+</div>

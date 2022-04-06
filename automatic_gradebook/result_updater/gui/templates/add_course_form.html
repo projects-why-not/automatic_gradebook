@@ -1,0 +1,49 @@
+<style>
+
+div.overlay {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background: red;
+    border-radius: 30px;
+}
+
+#close_overlay_bt {
+    width: 60px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    background: blue;
+    position: absolute;}
+</style>
+<script>
+    function closeOverlay() {
+    let overlays = document.getElementsByClassName("overlay");
+    if (overlays.length > 0)
+        overlays[0].parentNode.removeChild(overlays[0]);
+}
+</script>
+
+<div class="overlay">
+    <div id="close_overlay_bt" onclick="closeOverlay();"></div>
+    <div style="width:80%; height: 90%; overflow: auto;">
+        <form action="add_course" method="post">
+            <label for="course_name">Краткое имя курса (латиницей):</label>
+            <input id="course_name" name="short_name">
+            <br/>
+            <label for="course_nicename">Название курса:</label>
+            <input id="course_nicename" name="nicename">
+            <br/>
+            <label for="stud_list">Список студентов:</label>
+            <input id="stud_list" type="file" name="stud_list">
+<!--                   accept=".xlsx"-->
+
+            <br/>
+            <input type="submit">
+
+        </form>
+
+    </div>
+</div>

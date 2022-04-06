@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect,  request, make_response, ses
 from django.http import HttpResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
-from vizual_system import db
+from vizual_system.db import *
 app = Flask(__name__)
 
 
