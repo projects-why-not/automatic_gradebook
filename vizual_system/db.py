@@ -1,7 +1,7 @@
 import sqlite3
 
 
-con = sqlite3.connect("gradebook")
+con = sqlite3.connect("gradebook", check_same_thread=False)
 cur = con.cursor()
 
 
@@ -10,9 +10,9 @@ def get_data(name_table):
     return cur.execute(f"""SELECT * FROM {name_table}""").fetchall()
 
 
-def add_data(name_table, *data):
+def add_data(name_table, data):
     global cur
-    cur.execute(f"""INSERT {name_table} VALUES {data}""")
+    cur.execute(f"""INSERT {name_table} VALUES {data})""")
 
 
 def view_tasks():
