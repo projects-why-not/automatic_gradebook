@@ -5,9 +5,9 @@ con = sqlite3.connect("gradebook")
 cur = con.cursor()
 
 
-def get_data(name_table, *parameters):
+def get_data(name_table):
     global cur
-    return cur.execute(f"""SELECT * FROM {name_table + " " + parameters[0]}""").fetchall()
+    return cur.execute(f"""SELECT * FROM {name_table}""").fetchall()
 
 
 def add_data(name_table, *data):
@@ -17,7 +17,7 @@ def add_data(name_table, *data):
 
 def view_tasks():
     global cur
-    return cur.execute(f"""SELECT * FROM discipline_task""")
+    return cur.execute(f"""SELECT * FROM discipline_task""").fetchall()
 
 
 def add_task(data):
