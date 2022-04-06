@@ -32,4 +32,3 @@ def get_students_by_group(name_group):
 def add_student(name, class_name):
     add_data("student_mapping_scheme", name, class_name)
 
-
