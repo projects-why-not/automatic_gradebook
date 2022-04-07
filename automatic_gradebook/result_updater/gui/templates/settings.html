@@ -17,6 +17,13 @@ div.overlay {
     right: 0;
     background: blue;
     position: absolute;}
+
+.middle{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 100px;
+    margin-top: 30px;
+}
 </style>
 
 <script>
@@ -29,7 +36,20 @@ div.overlay {
 
 <div class="overlay">
     <div id="close_overlay_bt" onclick="closeOverlay();"></div>
-    <div style="width:80%; height: 90%; overflow: auto;">
+    <div style="width:80%; height: 90%; overflow: auto; ">
+        <form class="middle">
+        {% for item in data %}
 
+        Система {{item}} <br>
+        <label for="system_{{item}}_login">логин:</label>
+        <input id="system_{{item}}_login" name="system_{{item}}_login">
+        <br/>
+        <label for="system_{{item}}_password">пароль:</label>
+        <input id="system_{{item}}_password" name="system_{{item}}_password">
+        <br/>
+        {% endfor %}
+            <label for="submit">подтвердить</label>
+            <input type="submit" id="submit">
+        </form>
     </div>
 </div>

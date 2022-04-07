@@ -35,8 +35,8 @@ div.overlay {
 
             <label for="check_sistem">Проверяющая система</label></br>
             <p id="check_sistem">
-                {% for name in check_sistems %}
-                <input type="radio" name='chosen_sistem' value="{{name}}">{{name}}<br/>
+                {% for name in data %}
+                <input type="radio" name='chosen_sistem' value="{{name}}">{{name[0]}}<br/>
                 {% endfor %}
             </p>
             <input type="submit">

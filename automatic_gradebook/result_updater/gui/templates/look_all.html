@@ -17,6 +17,17 @@ div.overlay {
     right: 0;
     background: blue;
     position: absolute;}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+td, th {
+    border: 1px solid #333;
+}
+
 </style>
 <script>
     function closeOverlay() {
@@ -29,7 +40,23 @@ div.overlay {
     <div id="close_overlay_bt" onclick="closeOverlay();"></div>
     <div style="width:80%; height: 90%; overflow: auto;">
         <table>
+            <tr>
+                <th>Короткое название</th>
+                <th>Длинное название</th>
+                <th>Form Path</th>
+                <th>Student Mapping Path</th>
+            </tr>
 
+            {% for item in data %}
+
+            <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            </tr>
+
+            {% endfor %}
         </table>
     </div>
 </div>
